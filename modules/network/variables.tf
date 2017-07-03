@@ -1,15 +1,17 @@
 variable "region" {
 }
 
-variable "instance_ids" {
-  type = "list"
+variable "app_prefix" {
+  default = "ci-cluster"
+}
+
+variable "instance_id" {
 }
 
 variable "domain_name" {
 }
 
-variable "dns_records" {
-  type = "list"
+variable "cidr_block" {
 }
 
 variable "hosted_zone_id" {

@@ -2,6 +2,10 @@ variable "region" {
   default = "eu-west-1"
 }
 
+variable "app_prefix" {
+  default = "ci-cluster"
+}
+
 variable "amis" {
   type = "map"
   default = {
@@ -13,12 +17,17 @@ variable "amis" {
   }
 }
 
-variable "ssh_key_name" {
-  default = "dave-aws"
+variable "node_size" {
+  default = "t2.small"
 }
 
-variable "node_size" {
-  default = "t2.nano"
+variable "cidr_block" {
+  default = "10.0.0.0/16"
+}
+
+// Override Me!....
+variable "ssh_key_name" {
+  default = "dave-aws"
 }
 
 variable "hosted_zone_id" {
@@ -29,9 +38,5 @@ variable "domain_name" {
   default = "djh.host"
 }
 
-variable "dns_records" {
-  type = "list"
-  default = [
-    "jenkins"
-  ]
+variable "ci_webhook_token" {
 }

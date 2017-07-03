@@ -3,6 +3,7 @@ provider "aws" {
 }
 
 module "compute" {
+  app_prefix = "${var.app_prefix}"
   source = "./modules/compute"
   region = "${var.region}"
   amis = "${var.amis}"
@@ -10,13 +11,15 @@ module "compute" {
   ssh_key_name = "${var.ssh_key_name}"
   security_group_ids = "${module.network.security_group_ids}"
   subnet_id = "${module.network.subnet_id}"
+  ci_webhook_token = "${var.ci_webhook_token}"
 }
 
 module "network" {
+  app_prefix = "${var.app_prefix}"
   source = "./modules/network"
   region = "${var.region}"
   hosted_zone_id = "${var.hosted_zone_id}"
-  dns_records = "${var.dns_records}"
+  cidr_block = "${var.cidr_block}"
   domain_name = "${var.domain_name}"
-  instance_ids = "${module.compute.instance_ids}"
+  instance_id = "${module.compute.instance_id}"
 }

@@ -5,5 +5,5 @@ output "security_group_ids" {
 }
 
 output "subnet_id" {
-  value = "${aws_subnet.default.id}"
+  value = "${aws_subnet.subnet.id}"
 }

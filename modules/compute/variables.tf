@@ -1,6 +1,10 @@
 variable "region" {
 }
 
+variable "app_prefix" {
+  default = "ci-cluster"
+}
+
 variable "amis" {
   type = "map"
 }
@@ -16,4 +20,7 @@ variable "subnet_id" {
 }
 
 variable "node_size" {
+}
+
+variable "ci_webhook_token" {
 }
