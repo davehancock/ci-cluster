@@ -1,5 +1,5 @@
 data "template_file" "bootstrap_cloud_config" {
-  template = "${file("${path.module}/../../cloud-config/cloud-config.tpl")}"
+  template = "${file("${path.module}/../../../cloud-config/cloud-config.tpl")}"
 
   vars {
     ci_webhook_token = "${var.ci_webhook_token}"
