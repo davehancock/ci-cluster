@@ -15,6 +15,7 @@ resource "google_compute_instance" "bootstrap_node" {
   boot_disk {
     initialize_params {
       image = "${var.image}"
+      type = "pd-ssd"
     }
   }
 
