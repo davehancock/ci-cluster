@@ -3,6 +3,8 @@ data "template_file" "bootstrap_cloud_config" {
 
   vars {
     ci_webhook_token = "${var.ci_webhook_token}"
+    freighter_provider = "${var.freighter_provider}"
+    freighter_token = "${var.freighter_token}"
   }
 }
 

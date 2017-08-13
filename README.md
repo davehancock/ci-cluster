@@ -16,8 +16,8 @@
 - (Optional) Add new user
 - Blue Ocean create new Advanced Auto Github Org Pipeline
 - Enable Github Jenkins Webhook on Github side
+- (Optional) Add any jenkins credentials e.g. Docker Registry
 - Done.
-
 
 
 

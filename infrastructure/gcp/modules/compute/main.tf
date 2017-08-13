@@ -3,10 +3,11 @@ data "template_file" "bootstrap_cloud_config" {
 
   vars {
     ci_webhook_token = "${var.ci_webhook_token}"
+    freighter_provider = "${var.freighter_provider}"
+    freighter_token = "${var.freighter_token}"
   }
 }
 
-// Create a new instance
 resource "google_compute_instance" "bootstrap_node" {
   name = "${format("%s-node-%d", var.project_name, 0)}"
   zone = "${var.zone}"
@@ -15,12 +16,15 @@ resource "google_compute_instance" "bootstrap_node" {
   boot_disk {
     initialize_params {
       image = "${var.image}"
-      type = "pd-ssd"
     }
   }
 
   network_interface {
     network = "default"
+
+    access_config {
+      // Ephemeral IP
+    }
   }
 
   metadata {

@@ -18,13 +18,7 @@ variable "node_size" {
   default = "g1-small"
 }
 
-
-
 // Override Me!....
-variable "ssh_key_name" {
-  default = "dave-aws"
-}
-
 variable "hosted_zone_id" {
   default = "Z2K7Z8BOTLHT2O"
 }
@@ -34,4 +28,10 @@ variable "domain_name" {
 }
 
 variable "ci_webhook_token" {
+}
+
+variable "freighter_provider" {
+}
+
+variable "freighter_token" {
 }

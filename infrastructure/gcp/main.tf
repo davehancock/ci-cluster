@@ -9,8 +9,9 @@ module "compute" {
   zone = "${var.zone}"
   node_size = "${var.node_size}"
   image = "${var.image}"
-  ssh_key_name = "${var.ssh_key_name}"
   ci_webhook_token = "${var.ci_webhook_token}"
+  freighter_provider = "${var.freighter_provider}"
+  freighter_token = "${var.freighter_token}"
 }
 
 module "network" {
