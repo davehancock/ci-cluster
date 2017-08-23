@@ -40,3 +40,9 @@ variable "domain_name" {
 
 variable "ci_webhook_token" {
 }
+
+variable "freighter_provider" {
+}
+
+variable "freighter_token" {
+}

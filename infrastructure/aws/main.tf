@@ -12,6 +12,8 @@ module "compute" {
   security_group_ids = "${module.network.security_group_ids}"
   subnet_id = "${module.network.subnet_id}"
   ci_webhook_token = "${var.ci_webhook_token}"
+  freighter_provider = "${var.freighter_provider}"
+  freighter_token = "${var.freighter_token}"
 }
 
 module "network" {

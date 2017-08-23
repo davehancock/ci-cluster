@@ -44,7 +44,7 @@ resource "google_compute_firewall" "www" {
 }
 
 
-# TODO Leaving route53 in here as domain in managed here...
+# TODO Leaving route53 in here as domain is managed here...
 resource "aws_route53_record" "domain_routing_alias" {
   zone_id = "${var.hosted_zone_id}"
   name = "${var.domain_name}"
