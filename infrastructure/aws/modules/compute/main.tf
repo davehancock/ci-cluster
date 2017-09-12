@@ -2,6 +2,9 @@ data "template_file" "bootstrap_cloud_config" {
   template = "${file("${path.module}/../../../cloud-config/cloud-config.tpl")}"
 
   vars {
+    domain_name = "${var.domain_name}"
+    project_name = "${var.project_name}"
+    email_address = "${var.email_address}"
     ci_webhook_token = "${var.ci_webhook_token}"
     freighter_provider = "${var.freighter_provider}"
     freighter_token = "${var.freighter_token}"
@@ -18,6 +21,6 @@ resource "aws_instance" "bootstrap_node" {
   ]
   subnet_id = "${var.subnet_id}"
   tags = {
-    Name = "${format("%s-node-%d", var.app_prefix, 0)}"
+    Name = "${format("%s-node-%d", var.project_name, 0)}"
   }
 }

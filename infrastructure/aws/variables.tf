@@ -2,7 +2,7 @@ variable "region" {
   default = "eu-west-1"
 }
 
-variable "app_prefix" {
+variable "project_name" {
   default = "ci-cluster"
 }
 
@@ -26,16 +26,16 @@ variable "cidr_block" {
 }
 
 // Override Me!....
-variable "ssh_key_name" {
-  default = "dave-aws"
-}
-
 variable "hosted_zone_id" {
-  default = "Z2K7Z8BOTLHT2O"
+  default = "Z3VFJWA6WOMV2B"
 }
 
 variable "domain_name" {
-  default = "djh.host"
+  default = "djh.services"
+}
+
+variable "email_address" {
+  default = "daves125125@gmail.com"
 }
 
 variable "ci_webhook_token" {
@@ -45,4 +45,8 @@ variable "freighter_provider" {
 }
 
 variable "freighter_token" {
+}
+
+variable "ssh_key_name" {
+  default = "dave-aws"
 }
