@@ -14,16 +14,16 @@ coreos:
         [Service]
         Restart=always
         RestartSec=15
-        ExecStartPre=-/usr/bin/docker network create ci-cluster
+        ExecStartPre=-/usr/bin/docker network create ${project_name}
         ExecStart=/usr/bin/docker run \
             --name pontem \
-            --network ci-cluster \
+            --network ${project_name} \
             -p 80:80 \
             -p 443:443 \
             -e FREIGHTER_PROVIDER=${freighter_provider} \
             -e FREIGHTER_TOKEN=${freighter_token} \
             -m 150m \
-           daves125125/pontem:latest -d djh.host -s http://jenkins-master:8080 -n ci-cluster -e daves125125@gmail.com
+           daves125125/pontem:latest -d ${domain_name} -s http://jenkins-master:8080 -n ${project_name} -e ${email_address}
         ExecStopPost=/usr/bin/docker stop pontem
         ExecStopPost=/usr/bin/docker rm pontem
 
@@ -39,11 +39,11 @@ coreos:
         [Service]
         Restart=always
         RestartSec=15
-        ExecStartPre=-/usr/bin/docker network create ci-cluster
+        ExecStartPre=-/usr/bin/docker network create ${project_name}
         ExecStartPre=-/bin/bash -c "sudo mkdir -p /var/jenkins_home && sudo chown 1000:1000 /var/jenkins_home"
         ExecStart=/usr/bin/docker run \
             --name jenkins-master \
-            --network ci-cluster \
+            --network ${project_name} \
             --privileged \
             --user root \
             -v /var/jenkins_home:/var/jenkins_home \

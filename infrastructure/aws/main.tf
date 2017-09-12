@@ -3,8 +3,10 @@ provider "aws" {
 }
 
 module "compute" {
-  app_prefix = "${var.app_prefix}"
   source = "./modules/compute"
+  project_name = "${var.project_name}"
+  domain_name = "${var.domain_name}"
+  email_address = "${var.email_address}"
   region = "${var.region}"
   amis = "${var.amis}"
   node_size = "${var.node_size}"
@@ -17,8 +19,8 @@ module "compute" {
 }
 
 module "network" {
-  app_prefix = "${var.app_prefix}"
   source = "./modules/network"
+  project_name = "${var.project_name}"
   region = "${var.region}"
   hosted_zone_id = "${var.hosted_zone_id}"
   cidr_block = "${var.cidr_block}"

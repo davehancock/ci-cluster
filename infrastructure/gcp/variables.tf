@@ -20,11 +20,15 @@ variable "node_size" {
 
 // Override Me!....
 variable "hosted_zone_id" {
-  default = "Z2K7Z8BOTLHT2O"
+  default = "Z3VFJWA6WOMV2B"
 }
 
 variable "domain_name" {
-  default = "djh.host"
+  default = "djh.services"
+}
+
+variable "email_address" {
+  default = "daves125125@gmail.com"
 }
 
 variable "ci_webhook_token" {

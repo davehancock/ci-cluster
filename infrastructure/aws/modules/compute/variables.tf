@@ -1,8 +1,25 @@
-variable "region" {
+variable "project_name" {
 }
 
-variable "app_prefix" {
-  default = "ci-cluster"
+variable "domain_name" {
+}
+
+variable "email_address" {
+}
+
+variable "node_size" {
+}
+
+variable "ci_webhook_token" {
+}
+
+variable "freighter_provider" {
+}
+
+variable "freighter_token" {
+}
+
+variable "region" {
 }
 
 variable "amis" {
@@ -17,16 +34,4 @@ variable "security_group_ids" {
 }
 
 variable "subnet_id" {
-}
-
-variable "node_size" {
-}
-
-variable "ci_webhook_token" {
-}
-
-variable "freighter_provider" {
-}
-
-variable "freighter_token" {
 }

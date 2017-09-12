@@ -1,11 +1,13 @@
 provider "google" {
-  project = "ci-cluster"
   region = "${var.region}"
+  project = "${var.project_name}"
 }
 
 module "compute" {
   source = "./modules/compute"
   project_name = "${var.project_name}"
+  domain_name = "${var.domain_name}"
+  email_address = "${var.email_address}"
   zone = "${var.zone}"
   node_size = "${var.node_size}"
   image = "${var.image}"
